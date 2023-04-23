@@ -1,0 +1,17 @@
+.sonarqube/
+.vs/
+TransactionManagement.BLL/bin/
+TransactionManagement.BLL/obj/
+TransactionManagement.DAL/bin/
+TransactionManagement.DAL/obj/
+TransactionManagement.IntegrationTests/bin/
+TransactionManagement.IntegrationTests/obj/
+TransactionManagement.UnitTests/bin/
+TransactionManagement.UnitTests/coveragereport/
+TransactionManagement.UnitTests/obj/
+TransactionManagement.UnitTests/TestResults/
+TransactionManagement.Web/bin/
+TransactionManagement.Web/obj/
+TransactionManagement.WebTests/bin/
+TransactionManagement.WebTests/obj/
+coverage.xml
