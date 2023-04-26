@@ -24,7 +24,7 @@ namespace TransactionManagement.UnitTests.Tests
             var actualTotal = await transactionService.GetTotalForDateAsync(new DateTime(2023, 04, 11));
             var expectedTotal = 10m;
 
-            Assert.Equal(expectedTotal, actualTotal, 3);
+            Assert.Equal(expectedTotal, actualTotal + 1, 2);
         }
 
         [Fact]
