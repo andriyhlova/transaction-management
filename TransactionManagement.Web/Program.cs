@@ -15,6 +15,8 @@ if (builder.Environment.IsProduction())
         new DefaultAzureCredential(new DefaultAzureCredentialOptions()));
 }
 
+//test
+
 // Add services to the container.
 var connectionString = builder.Configuration!.GetConnectionString(nameof(AppDbContext));
 builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(connectionString));
