@@ -18,7 +18,7 @@ if (builder.Environment.IsProduction())
 
 // Add services to the container.
 var connectionString = builder.Configuration!.GetConnectionString(nameof(AppDbContext));
-builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(connectionString));
+builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql("Host=transaction-management-2026-1.postgres.database.azure.com; Database=postgres; Username=ahlova; Password=P@ssw0rd"));
 builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
 builder.Services.AddScoped<ITransactionService, TransactionService>();
 builder.Services.AddControllersWithViews();
