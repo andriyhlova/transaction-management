@@ -1,3 +1,4 @@
+using Azure.Identity;
 using Microsoft.EntityFrameworkCore;
 using TransactionManagement.BLL.Services.Implementations;
 using TransactionManagement.BLL.Services.Interfaces;
@@ -9,9 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 if (builder.Environment.IsProduction())
 {
-    //builder.Configuration.AddAzureKeyVault(
-    //    new Uri($"https://{builder.Configuration["KeyVaultName"]}.vault.azure.net/"),
-    //    new DefaultAzureCredential(new DefaultAzureCredentialOptions()));
+    builder.Configuration.AddAzureKeyVault(
+        new Uri($"https://{builder.Configuration["KeyVaultName"]}.vault.azure.net/"),
+        new DefaultAzureCredential(new DefaultAzureCredentialOptions()));
 }
 
 //test
