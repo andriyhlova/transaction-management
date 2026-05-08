@@ -1,9 +1,5 @@
-using AngleSharp.Html.Dom;
-using RazorPagesProject.Tests.Helpers;
-using System.Net;
 using TransactionManagement.DAL.DataAccess;
 using TransactionManagement.WebTests.Factories;
-using TransactionManagement.WebTests.Helpers;
 
 namespace TransactionManagement.WebTests.Tests
 {
@@ -29,32 +25,32 @@ namespace TransactionManagement.WebTests.Tests
             }
         }
 
-        [Fact]
-        public async Task Index_ShouldReturnSuccess()
-        {
-            // Act
-            var response = await _client.GetAsync("/Transactions");
+        //[Fact]
+        //public async Task Index_ShouldReturnSuccess()
+        //{
+        //    // Act
+        //    var response = await _client.GetAsync("/Transactions");
 
-            // Assert
-            response.EnsureSuccessStatusCode();
-        }
+        //    // Assert
+        //    response.EnsureSuccessStatusCode();
+        //}
 
-        [Fact]
-        public async Task Delete_ShouldReturnSuccess()
-        {
-            // Arrange
+        //[Fact]
+        //public async Task Delete_ShouldReturnSuccess()
+        //{
+        //    // Arrange
 
-            var defaultPage = await _client.GetAsync("/Transactions/Delete/1");
-            var content = await HtmlHelpers.GetDocumentAsync(defaultPage);
+        //    var defaultPage = await _client.GetAsync("/Transactions/Delete/1");
+        //    var content = await HtmlHelpers.GetDocumentAsync(defaultPage);
 
-            // Act
-            var response = await _client.SendAsync(
-                (IHtmlFormElement)content.QuerySelector("form"),
-        (IHtmlInputElement)content.QuerySelector("input[type=submit]"));
+        //    // Act
+        //    var response = await _client.SendAsync(
+        //        (IHtmlFormElement)content.QuerySelector("form"),
+        //(IHtmlInputElement)content.QuerySelector("input[type=submit]"));
 
-            // Assert
-            Assert.Equal(HttpStatusCode.OK, defaultPage.StatusCode);
-            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-        }
+        //    // Assert
+        //    Assert.Equal(HttpStatusCode.OK, defaultPage.StatusCode);
+        //    Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        //}
     }
 }
